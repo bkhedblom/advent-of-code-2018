@@ -2,7 +2,7 @@ import { Input, OnInit } from "@angular/core";
 
 export abstract class SolverBase implements OnInit {
     @Input() input:string;
-    solution:number;
+    solution:number|string;
     showInput = false;
     get shortInput() { return this.input.substr(0,10)}
 
@@ -17,10 +17,14 @@ export abstract class SolverBase implements OnInit {
       this.solution = this.solve(this.input);
     }
 
-    protected abstract solve(input:string): number;
+    protected abstract solve(input:string): number|string;
 
-    protected splitToNumberArray(toSplit:string, delimiter = "\n"){
-        return toSplit.split(delimiter).map((value) => Number(value))
+    protected splitToNumberArray(toSplit:string){
+        return this.splitStringByLine(toSplit).map((value) => Number(value))
+    }
+
+    protected splitStringByLine(toSplit:string):string[]{
+        return toSplit.replace("\r", "").split("\n");
     }
 
     toggleInput = () => {

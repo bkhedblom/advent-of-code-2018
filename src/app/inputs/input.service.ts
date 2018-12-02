@@ -6,9 +6,8 @@ import { Day2 } from './data/day2';
   providedIn: 'root'
 })
 export class InputService {
-  day1a = new Day1().data;
-  day1b = new Day1().data;
-  day2a = new Day2().data;
+  day1 = new Day1().data;
+  day2 = new Day2().data;
   constructor() { 
   }
 }
