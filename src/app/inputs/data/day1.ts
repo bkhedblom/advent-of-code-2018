@@ -1,6 +1,5 @@
 export class Day1 {
-    get data(){return  this.rawdata.replace("\r\n", ",")}
-    private rawdata = 
+    data = 
 `-10
 -12
 +1
