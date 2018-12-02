@@ -1,24 +1,15 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { SolverBase } from 'src/app/solver-base';
 
 @Component({
   selector: 'aoc-day1a',
-  templateUrl: './day1a.component.html',
+  templateUrl: '../../shared/solver-template.html',
   styleUrls: ['./day1a.component.css']
 })
-export class Day1aComponent implements OnInit {
+export class Day1aComponent extends SolverBase {
 
-  @Input() input:string;
-  solution:number;
-  constructor() { }
-
-  ngOnInit() {
-    this.solve();
-  }
-  solve(): void {
-    this.solution = this.input
-      .split("\n")
-      .map((value) => Number(value))
+  protected solve(input:string): number {    
+    return this.splitToNumberArray(input)
       .reduce((sum, value) => sum + value);
   }
-
 }

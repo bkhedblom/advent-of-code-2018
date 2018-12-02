@@ -1,4 +1,4 @@
-export class Day1a {
+export class Day1 {
     get data(){return  this.rawdata.replace("\r\n", ",")}
     private rawdata = 
 `-10
