@@ -1,12 +1,21 @@
+<div class="solver-output">
+  <h2>{{name}}</h2>
 <p>
   Got answer:
 </p>
-  <pre>
+<pre>
 {{solution}}
-  </pre>  
+</pre>  
+<div (click)="toggleInput()" class="clickable">
 <p>
   From input:
 </p>
-  <pre>
+  <pre *ngIf="showInput">
 {{input}}
-  </pre>  
+</pre>
+<div *ngIf="!showInput">  
+<pre>{{shortInput}}</pre>
+<small>&#0133;</small>
+</div>
+</div>
+</div>
