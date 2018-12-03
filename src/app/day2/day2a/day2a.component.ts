@@ -7,8 +7,7 @@ import { SolverBase } from 'src/app/solver-base';
   styleUrls: ['./day2a.component.css']
 })
 export class Day2aComponent extends SolverBase{
-  protected solve(input: string): number {
-    var inputArray = this.splitStringByLine(input);
+  protected solve(inputArray: string[]): number {
     let twiceCount = 0, thriceCount = 0;
     inputArray.forEach(boxId => {
       let countedLetters = this.calculateLetterOccurances(boxId);

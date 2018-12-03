@@ -8,8 +8,7 @@ import { SolverBase } from 'src/app/solver-base';
 })
 export class Day2bComponent extends SolverBase{
 
-  protected solve(input: string): string {
-    const boxIds = this.splitStringByLine(input);
+  protected solve(boxIds: string[]): string {
     for (const boxId of boxIds) {
       for (let posToRemove = 0; posToRemove < boxId.length; posToRemove++) {
         const firstPart = boxId.substring(0, posToRemove);

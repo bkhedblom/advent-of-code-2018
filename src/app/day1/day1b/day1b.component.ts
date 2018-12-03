@@ -7,8 +7,8 @@ import { SolverBase } from 'src/app/solver-base';
   styleUrls: ['./day1b.component.css']
 })
 export class Day1bComponent extends SolverBase {
-  protected solve(input: string): number {
-    const numbers = this.splitToNumberArray(input);
+  protected solve(input: string[]): number {
+    const numbers = this.toNumbers(input);
     const foundFreqs = new Set<number>();
     let currentFreq = 0, i = 0;
     while (!foundFreqs.has(currentFreq)) {

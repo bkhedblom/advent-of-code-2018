@@ -8,8 +8,8 @@ import { SolverBase } from 'src/app/solver-base';
 })
 export class Day1aComponent extends SolverBase {
 
-  protected solve(input:string): number {    
-    return this.splitToNumberArray(input)
+  protected solve(input:string[]): number {    
+    return this.toNumbers(input)
       .reduce((sum, value) => sum + value);
   }
 }

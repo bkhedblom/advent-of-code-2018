@@ -14,13 +14,14 @@ export abstract class SolverBase implements OnInit {
          return name.substr(0,length-lengthToRemove);
     }
     ngOnInit() {
-      this.solution = this.solve(this.input);
+        const inputArray = this.splitStringByLine(this.input);
+      this.solution = this.solve(inputArray);
     }
 
-    protected abstract solve(input:string): number|string;
+    protected abstract solve(input:string[]): number|string;
 
-    protected splitToNumberArray(toSplit:string){
-        return this.splitStringByLine(toSplit).map((value) => Number(value))
+    protected toNumbers(strings:string[]){
+        return strings.map((str) => Number(str));
     }
 
     protected splitStringByLine(toSplit:string):string[]{
