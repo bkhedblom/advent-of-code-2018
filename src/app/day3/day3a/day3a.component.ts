@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SolverBase } from 'src/app/solver-base';
+import { Claim } from '../claim';
 
 @Component({
   selector: 'aoc-day3a',
@@ -9,19 +10,14 @@ import { SolverBase } from 'src/app/solver-base';
 export class Day3aComponent extends SolverBase{
   protected solve(input: string[]): number {
     const fabric:number[][] = [[]];
-    const claimSyntax = /#(\d+) @ (\d+),(\d+): (\d+)x(\d+)/;
     let collisions = 0;
-    input.forEach(claim => {
-      var claimData = claim.match(claimSyntax);
-      var startX = Number(claimData[2]);
-      var startY = Number(claimData[3]);
-      var lenX = Number(claimData[4]);
-      var lenY = Number(claimData[5]);
-      for (let x = startX; x < startX + lenX; x++) {
-        for (let y = startY; y < startY + lenY; y++) {
+    input.forEach(claimstring => {
+      const claim = new Claim(claimstring)
+      for (let x = claim.startX; x < claim.startX + claim.lenX; x++) {
+        for (let y = claim.startY; y < claim.startY + claim.lenY; y++) {
           if(!fabric[x])
             fabric[x] = []
-            
+
           if(!fabric[x][y]){
             fabric[x][y] = 1;
             continue;
