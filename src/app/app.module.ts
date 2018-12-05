@@ -11,6 +11,7 @@ import { Day3aComponent } from './day3/day3a/day3a.component';
 import { Day3bComponent } from './day3/day3b/day3b.component';
 import { Day4aComponent } from './day4/day4a/day4a.component';
 import { Day4bComponent } from './day4/day4b/day4b.component';
+import { Day5aComponent } from './day5/day5a/day5a.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { Day4bComponent } from './day4/day4b/day4b.component';
     Day3aComponent,
     Day3bComponent,
     Day4aComponent,
-    Day4bComponent
+    Day4bComponent,
+    Day5aComponent
   ],
   imports: [
     BrowserModule
